@@ -1,0 +1,16 @@
+services:
+  apiservice:
+    image: ${DOCKER_REGISTRY-}apiservice
+    build:
+      context: .
+      dockerfile: apiservice/Dockerfile
+
+  frontend:
+    image: ${DOCKER_REGISTRY-}frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+
+  distributedcache:
+    image: redis
+
